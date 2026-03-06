@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Montserrat:wght@700;900&display=swap');
+
+:root {
+    --bg-color: #05132E;
+    --primary-blue: #0084FF;
+    --primary-blue-glow: rgba(0, 132, 255, 0.4);
+    --accent-green: #00FF85;
+    --accent-green-glow: rgba(0, 255, 133, 0.4);
+    --text-white: #FFFFFF;
+    --text-gray: #B0B0B0;
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+
+    --font-main: 'Inter', sans-serif;
+    --font-heading: 'Montserrat', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-white);
+    font-family: var(--font-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+    font-weight: 900;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Base Layout */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+section {
+    padding: 100px 0;
+}
+
+/* Typography Utils */
+.text-gradient-blue {
+    background: linear-gradient(90deg, #FFFFFF 0%, var(--primary-blue) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.text-blue {
+    color: var(--primary-blue);
+}
+
+.text-green {
+    color: var(--accent-green);
+}
+
+/* Premium Elements */
+.glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.btn {
+    display: inline-block;
+    padding: 18px 40px;
+    border-radius: 50px;
+    font-family: var(--font-heading);
+    font-weight: 900;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    text-align: center;
+}
+
+.btn-blue {
+    background-color: var(--primary-blue);
+    color: white;
+    box-shadow: 0 0 20px var(--primary-blue-glow);
+}
+
+.btn-blue:hover {
+    background-color: #0073e6;
+    transform: scale(1.05);
+    box-shadow: 0 0 30px var(--primary-blue-glow);
+}
+
+.btn-green {
+    background-color: var(--accent-green);
+    color: #05132E;
+    box-shadow: 0 0 20px var(--accent-green-glow);
+}
+
+.btn-green:hover {
+    background-color: #00e677;
+    transform: scale(1.05);
+    box-shadow: 0 0 30px var(--accent-green-glow);
+}
+
+/* Background Gradients/Glows */
+.bg-glow {
+    position: fixed;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, var(--primary-blue-glow) 0%, transparent 70%);
+    filter: blur(80px);
+    z-index: -1;
+    pointer-events: none;
+}
+
+.glow-1 {
+    top: -100px;
+    right: -100px;
+}
+
+.glow-2 {
+    bottom: -100px;
+    left: -100px;
+    opacity: 0.5;
+}
+
+/* Speaker Cards */
+.speakers-grid .glass-card h3 {
+    font-size: 1.1rem;
+    margin-top: 10px;
+    letter-spacing: 1px;
+}
+
+header {
+    background: rgba(5, 19, 46, 0.8);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.hero {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 40px;
+}
+
+.pricing-grid {
+    margin-top: 40px;
+}
+
+.pricing-card {
+    flex: 1;
+    min-width: 320px;
+    max-width: 450px;
+}
+
+/* Animations */
+@keyframes glowPulse {
+    0% {
+        opacity: 0.3;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.6;
+        transform: scale(1.1);
+    }
+
+    100% {
+        opacity: 0.3;
+        transform: scale(1);
+    }
+}
+
+.bg-glow {
+    animation: glowPulse 10s infinite ease-in-out;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    section {
+        padding: 60px 0;
+    }
+
+    h1 {
+        font-size: 2.5rem !important;
+    }
+
+    h2 {
+        font-size: 2rem !important;
+    }
+
+    .hero {
+        min-height: auto;
+    }
+}
