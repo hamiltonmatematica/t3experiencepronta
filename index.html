@@ -2,220 +2,1020 @@
 <html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>T3 Experience | O Maior Evento Empresarial do Norte de Minas</title>
-    <meta name="description"
-        content="A imersão definitiva para líderes que buscam crescimento com método. 15 e 16 de abril em Montes Claros.">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1440">
+  <title>T3 Experience</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800&family=Barlow:wght@400;500;600;700;800&family=Montserrat:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --bg-deep: #05132E;
+      --blue-accent: #2C7FFF;
+      --green: #24C834;
+      --white: #FFFFFF;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: var(--bg-deep);
+      font-family: 'Barlow', sans-serif;
+      width: 1440px;
+      margin: 0 auto;
+      color: var(--white);
+      position: relative;
+    }
+
+    /* BOTOES GERAIS */
+    .btn-blue {
+      background: var(--blue-accent);
+      color: #fff;
+      font-family: 'Barlow', sans-serif;
+      font-weight: 700;
+      font-size: 18px;
+      /* Texto maior em 1 nível */
+      text-transform: uppercase;
+      padding: 18px 45px;
+      /* Botão mais espaçoso */
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      box-shadow: 0px 4px 15px rgba(44, 127, 255, 0.4);
+      transition: all 0.2s;
+    }
+
+    .btn-blue:hover {
+      background: #1a6ff5;
+      transform: translateY(-2px);
+    }
+
+    .btn-white {
+      width: 360px;
+      height: 50px;
+      background: var(--white);
+      color: var(--bg-deep);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 700;
+      font-size: 18px;
+      text-transform: uppercase;
+      border: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .btn-white:hover {
+      background: #e6e6e6;
+    }
+
+    /* HEADER */
+    .header {
+      position: relative;
+      width: 1440px;
+      height: 121px;
+      background: url('./public/Rectangle 22521.png') repeat-x center top;
+      background-size: cover;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 100px;
+      z-index: 50;
+    }
+
+    .logo-header {
+      width: 148px;
+    }
+
+    .header-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 12px;
+    }
+
+    .texto-header {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 20px;
+      /* Aumentado um pouco */
+      margin-top: 10px;
+      /* Descendo um pouco conforme pedido */
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .texto-header b {
+      font-weight: 700;
+    }
+
+    .texto-header span {
+      font-weight: 300;
+    }
+
+    .texto-header .divider {
+      font-weight: 300;
+      margin: 0 10px;
+      opacity: 0.5;
+    }
+
+    /* HERO IMAGE */
+    .hero-wrapper {
+      position: relative;
+      width: 1440px;
+      height: 725px;
+      /* Tamanho da imagem na dobra superior */
+      background: url('./public/image 40.png') no-repeat top center;
+      background-size: cover;
+    }
+
+    /* Gradiente na base da imagem do hero */
+    .hero-wrapper::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 350px;
+      background: linear-gradient(180deg, rgba(5, 19, 46, 0) 0%, #05132E 100%);
+      pointer-events: none;
+    }
+
+    /* MAIN CONTENT (Logo e Título) */
+    .hero-content {
+      background-color: var(--bg-deep);
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-logo-small {
+      position: absolute;
+      top: 553px;
+      /* Exato do Figma */
+      left: 620px;
+      /* Exato do Figma */
+      width: 199.44px;
+      /* Exato do Figma */
+      height: 111.98px;
+      /* Exato do Figma */
+      z-index: 20;
+    }
+
+    .hero-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 65px;
+      font-weight: 600;
+      line-height: 0.95;
+      text-transform: uppercase;
+    }
+
+    .hero-title .blue {
+      color: var(--blue-accent);
+    }
+
+    .hero-subtitle {
+      font-family: 'Barlow', sans-serif;
+      font-size: 18px;
+      margin: 25px 0 40px 0;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .hero-subtitle b {
+      color: #fff;
+      font-weight: 700;
+    }
+
+    /* MOTIVACIONAL */
+    .motivacional-section {
+      width: 1440px;
+      position: relative;
+      background: url('./public/people-taking-part-high-protocol-event (2) 1.jpg') no-repeat center bottom;
+      background-size: cover;
+      text-align: center;
+      padding: 100px 0;
+    }
+
+    .motivacional-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(180deg, #05132E 0%, rgba(5, 19, 46, 0.82) 25%, rgba(5, 19, 46, 0.82) 100%);
+      z-index: 1;
+    }
+
+    .motivacional-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .motivacional-content h2 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 50px;
+      font-weight: 600;
+      line-height: 1;
+      text-transform: uppercase;
+      margin: 0 auto 40px auto;
+      /* Aumentado espaçamento */
+      width: 732px;
+      height: 108px;
+      transform: translateY(-90px);
+      /* Sobe mais o elemento mantendo o fluxo flex/block */
+    }
+
+    .motivacional-content h2 .blue {
+      color: var(--blue-accent);
+      display: block;
+    }
+
+    /* Separando em linhas como no screenshot */
+
+    .motivacional-content .desc {
+      font-family: 'Barlow', sans-serif;
+      font-size: 22px;
+      /* Aumentado de 18px para 22px */
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 1);
+      /* Texto mais branco p/ destacar no fundo escuro */
+      margin-bottom: 30px;
+      max-width: 850px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .motivacional-content .desc b {
+      color: #fff;
+    }
+
+    .btn-wrapper {
+      margin-top: 100px;
+      /* Afasta o botão do parágrafo */
+    }
+
+    /* TEXTO Montes Claros (agora relativo) */
+    .text-montes-claros {
+      text-align: center;
+      font-family: 'Barlow', sans-serif;
+      font-size: 24px;
+      /* Aumentado de 20px para 24px */
+      font-weight: 400;
+      line-height: 1.4;
+      color: rgba(255, 255, 255, 0.9);
+      margin: 0 auto;
+    }
+
+    .text-montes-claros b {
+      font-weight: 700;
+      color: #fff;
+    }
+
+    /* SPEAKERS */
+    .speakers-section {
+      background-color: var(--bg-deep);
+      padding: 100px 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .speakers-bg-map {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 1000px;
+      height: auto;
+      opacity: 0.1;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .speakers-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 60px;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 60px;
+      position: relative;
+      z-index: 2;
+      color: #fff;
+    }
+
+    .speakers-title .blue {
+      color: var(--blue-accent);
+    }
+
+    .speakers-grid-row1 {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 15px;
+      position: relative;
+      z-index: 2;
+      max-width: 1020px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .speakers-grid-row2 {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 60px;
+      position: relative;
+      z-index: 2;
+      max-width: 1020px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .speaker-card {
+      width: 184px;
+      height: 320px;
+      background: #05132E;
+      border-radius: 12px;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+      flex-shrink: 0;
+      /* Impede os cards de serem espremidos */
+    }
+
+    .speaker-card.wide {
+      width: 247px;
+      /* Calculado para fechar o alinhamento da Grid com 5 colunas */
+    }
+
+    .speaker-card.extra-wide {
+      width: 320px;
+      /* Calculado para fechar o alinhamento da Grid com 5 colunas */
+    }
+
+    .speaker-card:hover {
+      box-shadow: 0 15px 40px rgba(44, 127, 255, 0.2);
+    }
+
+    .speaker-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .speaker-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+      mask-image: linear-gradient(to bottom, black 50%, transparent 95%);
+      -webkit-mask-image: -webkit-linear-gradient(top, black 50%, transparent 95%);
+      z-index: 1;
+    }
+
+    .speaker-card.extra-wide .speaker-img {
+      /* Ajustando e ampliando a imagem do trio para cobrir a largura maior */
+      object-position: center 30%;
+      transform: scale(1.15);
+      /* Aumenta a imagem para ela encostar nas bordas */
+      transform-origin: top center;
+    }
+
+    .speaker-card.wide .speaker-img {
+      /* Ajustando e ampliando a imagem da dupla para cobrir a largura maior */
+      object-position: center top;
+      transform: scale(1.1);
+      transform-origin: top center;
+    }
+
+    .speaker-info-wrapper {
+      position: absolute;
+      top: 210px;
+      /* Exato do Figma */
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      z-index: 10;
+    }
+
+    .speaker-name {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 44.17px;
+      font-weight: 600;
+      /* Semi Bold */
+      line-height: 0.9;
+      font-style: italic;
+      /* Adicionado Itálico */
+      text-transform: uppercase;
+      text-align: center;
+      color: #fff;
+    }
+
+    .speaker-role {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 44.17px;
+      font-weight: 200;
+      /* Extra Light */
+      text-transform: uppercase;
+      text-align: center;
+      line-height: 0.9;
+      font-style: italic;
+      /* Adicionado Itálico */
+      color: #fff;
+      margin-top: -5px;
+    }
+
+    .speaker-duo {
+      display: flex;
+      flex-direction: row;
+      /* Lado a Lado */
+      justify-content: space-evenly;
+      align-items: flex-end;
+      /* Alinha pelo bottom */
+      width: 100%;
+      padding: 0 10px;
+    }
+
+    .speaker-duo>div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex-grow: 1;
+      /* Preenche igual */
+    }
+
+    .speaker-duo .speaker-name {
+      font-size: 30px;
+      line-height: 0.9;
+    }
+
+    .speaker-duo .speaker-role {
+      font-size: 30px;
+      /* Reduzido levemente para caber lado a lado no card wide de 247px */
+      line-height: 0.9;
+    }
+
+    .speaker-trio {
+      display: flex;
+      flex-direction: row;
+      /* Lado a Lado */
+      justify-content: space-evenly;
+      align-items: flex-end;
+      /* Alinha pelo bottom */
+      width: 100%;
+      padding: 0 5px;
+    }
+
+    .speaker-trio>div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex-grow: 1;
+      /* Preenche igual */
+    }
+
+    .speaker-trio .speaker-name {
+      font-size: 24px;
+      line-height: 0.9;
+    }
+
+    .speaker-trio .speaker-role {
+      font-size: 24px;
+      line-height: 0.9;
+    }
+
+    /* TICKETS SECTION */
+    .tickets-section {
+      background-color: var(--bg-deep);
+      padding: 100px 20px 60px 20px;
+      /* Reduzido bottom padding para fundir com o footer, e side margins para adaptar ao centro */
+      display: flex;
+      justify-content: center;
+      /* Centralizar os itens */
+      position: relative;
+      overflow: hidden;
+      min-height: 580px;
+      /* Reduzido o min-height drasticamente */
+    }
+
+    .tickets-bg-layer {
+      position: absolute;
+      top: 2453px;
+      /* Exato do Figma */
+      left: -48px;
+      /* Exato do Figma */
+      width: 1512px;
+      /* Exato do Figma */
+      height: 1055px;
+      /* Exato do Figma */
+      opacity: 0.2;
+      /* mix-blend-mode: luminosity removido */
+      background: radial-gradient(115.3% 50% at 50% 50%, rgba(5, 19, 46, 0) 0%, #05132E 100%), url('./public/back ingressos.jpg');
+      background-size: cover;
+      pointer-events: none;
+      z-index: 0;
+      transform: translateY(-2453px);
+      /* Compensação do container */
+    }
+
+    .tickets-left {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      /* Título e Cards centralizados */
+      z-index: 10;
+      width: 100%;
+      max-width: 1200px;
+    }
+
+    .tickets-left h2 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 50px;
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-bottom: 25px;
+      /* Reduzida a margem */
+    }
+
+    .tickets-left h2 .blue {
+      color: var(--blue-accent);
+    }
+
+    .tickets-cards-wrapper {
+      display: flex;
+      gap: 15px;
+      /* Mais próximos */
+    }
+
+    .ticket-card {
+      width: 300px;
+      border-radius: 12px;
+      padding: 30px;
+      padding-bottom: 40px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+    }
+
+    .ticket-card.diamond {
+      background: #F8F9FA;
+      color: #05132E;
+    }
+
+    .ticket-card.black {
+      background: linear-gradient(180deg, #1A1A1A 0%, #000000 100%);
+      color: #fff;
+      border: 1px solid #333;
+    }
+
+    .ticket-card h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 36px;
+      font-weight: 700;
+      line-height: 34.35px;
+      letter-spacing: -0.03em;
+      margin-bottom: 8px;
+    }
+
+    .ticket-card.diamond h3 {
+      color: #2C7FFF;
+    }
+
+    .ticket-subtitle {
+      font-family: 'Barlow', sans-serif;
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+
+    .ticket-card.diamond .ticket-subtitle {
+      color: #666;
+    }
+
+    .ticket-card.black .ticket-subtitle {
+      color: #999;
+    }
+
+    .installment {
+      font-size: 14px;
+    }
+
+    .ticket-price {
+      font-family: 'Barlow', sans-serif;
+      font-size: 50px;
+      font-weight: 800;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      margin: 5px 0;
+      line-height: 1;
+    }
+
+    .ticket-card.diamond .ticket-price {
+      color: #2C7FFF;
+    }
+
+    .ticket-price span {
+      font-size: 24px;
+      margin-top: 8px;
+      margin-right: 5px;
+    }
+
+    .price-cash {
+      font-size: 12px;
+      /* text-decoration: line-through removido */
+      margin-bottom: 25px;
+    }
+
+    .ticket-card.diamond .price-cash {
+      color: #999;
+    }
+
+    .ticket-card.black .price-cash {
+      color: #666;
+    }
+
+    .includes-title {
+      font-weight: 700;
+      font-size: 13px;
+      margin-bottom: 15px;
+    }
+
+    .ticket-list {
+      list-style: none;
+      text-align: left;
+      font-size: 13px;
+      line-height: 1.5;
+      margin-bottom: 30px;
+      flex-grow: 1;
+      /* Empurra o botão pra baixo uniformemente */
+    }
+
+    .ticket-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .check-icon {
+      color: var(--green);
+      font-weight: bold;
+    }
+
+    .btn-ticket {
+      background: var(--green);
+      color: #fff;
+      font-family: 'Barlow', sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      text-transform: uppercase;
+      border: none;
+      border-radius: 6px;
+      padding: 15px 0;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .btn-ticket:hover {
+      background: #1eb32c;
+    }
+
+    /* IMAGEM DOS TICKETS FÍSICOS */
+    .tickets-mockups {
+      position: absolute;
+      top: 90px;
+      /* Alinhado abaixo do titulo */
+      left: calc(50% + 50px);
+      /* Sobrepondo o card black na direita e saindo pra fora */
+      width: 657px;
+      height: 466.5px;
+      z-index: 5;
+    }
+
+    /* FOOTER */
+    .footer {
+      background: url('./public/people-taking-part-high-protocol-event (2) 1.jpg') no-repeat center bottom;
+      background-size: cover;
+      position: relative;
+      padding: 80px 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 60px;
+    }
+
+    .footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(5, 19, 46, 0.95);
+    }
+
+    .footer-content {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      /* Centralizando o conteúdo do footer perfeitamente */
+      gap: 60px;
+      margin: 0 auto;
+      max-width: 1200px;
+      width: 100%;
+    }
+
+    .footer-content h2 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 50px;
+      font-weight: 700;
+      line-height: 1.1;
+      text-transform: uppercase;
+    }
+
+    .footer-content h2 .blue {
+      color: var(--blue-accent);
+    }
+
+    .footer-divider {
+      width: 1px;
+      height: 80px;
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .footer-right {
+      max-width: 320px;
+    }
+
+    .footer-right p {
+      font-family: 'Barlow', sans-serif;
+      font-size: 16px;
+      /* 1 nível de tamanho de fonte acima */
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 25px;
+      /* Um tiquinho mais espaçoso */
+    }
+  </style>
 </head>
 
 <body>
-    <div class="bg-glow glow-1"></div>
-    <div class="bg-glow glow-2"></div>
 
-    <header>
-        <nav class="container"
-            style="display: flex; justify-content: space-between; align-items: center; padding: 20px;">
-            <div class="logo">
-                <span
-                    style="font-family: var(--font-heading); font-weight: 900; font-size: 1.5rem; letter-spacing: -1px;">T3
-                    <span style="color: var(--primary-blue);">EXPERIENCE</span></span>
-            </div>
-            <div class="header-info" style="text-align: right; font-weight: 700; font-size: 0.8rem;">
-                DATA: 15 E 16 DE ABRIL | LOCAL: CENTRO DE EVENTOS
-            </div>
-            <a href="#ingressos" class="btn btn-blue" style="padding: 10px 20px; font-size: 0.8rem;">GARANTIR
-                INGRESSO</a>
-        </nav>
-    </header>
+  <header class="header">
+    <img src="./public/Group 1261153055.png" alt="Logo" class="logo-header">
+    <div class="header-right">
+      <div class="texto-header">
+        <b>DATA: 15</b> <span>E</span> <b>16 DE ABRIL</b>
+        <span class="divider">|</span>
+        <b>LOCAL: CENTRO DE EVENTO</b> <span>PARQUE DE EXPOSIÇÃO JOÃO ALENCAR ATHAYDE</span>
+      </div>
+      <a href="#ingressos" class="btn-white">GARANTIR INGRESSO</a>
+    </div>
+  </header>
 
-    <main>
-        <!-- Hero Section -->
-        <section class="hero container" style="text-align: center;">
-            <div class="hero-content">
-                <h1 style="font-size: 4rem; line-height: 1; margin-bottom: 20px;">
-                    O MAIOR EVENTO EMPRESARIAL DA <span class="text-blue">HISTÓRIA DO NORTE DE MINAS!</span>
-                </h1>
-                <p style="font-size: 1.2rem; max-width: 800px; margin: 0 auto 40px; color: var(--text-gray);">
-                    T3 Experience: A Imersão Definitiva para Líderes que buscam Crescimento com Método.
-                </p>
-                <div class="hero-speakers" style="margin-bottom: 40px;">
-                    <img src="assets/bg-hero.png" alt="Palestrantes" style="max-width: 100%; border-radius: 20px;">
-                </div>
-                <a href="#ingressos" class="btn btn-blue">GARANTIR INGRESSO</a>
-            </div>
-        </section>
+  <div class="hero-wrapper">
+    <img src="./public/Group 1261153055.png" alt="T3 Experience Logo" class="hero-logo-small">
+  </div>
 
-        <!-- Pain Section -->
-        <section style="background-color: rgba(0,0,0,0.3); text-align: center;">
-            <div class="container">
-                <h2 style="font-size: 3rem; margin-bottom: 30px;">
-                    CHEGA DE PALESTRAS MOTIVACIONAIS QUE <span class="text-blue">NÃO MUDAM SEUS NÚMEROS</span>
-                </h2>
-                <div style="max-width: 800px; margin: 0 auto; font-size: 1.1rem; color: var(--text-gray);">
-                    <p style="margin-bottom: 20px;">
-                        Todo empresário sabe que crescer na base da tentativa e erro custa caro. No T3 Experience, o
-                        foco não é apenas inspirar, mas entregar o <strong>mapa prático</strong> para conectar marcas,
-                        multiplicar capital e dominar o mercado.
-                    </p>
-                    <p>
-                        Nos dias <strong>15 e 16 de abril</strong>, Montes Claros será o palco da inovação empresarial
-                        do país.
-                    </p>
-                </div>
-                <a href="#ingressos" class="btn btn-blue" style="margin-top: 40px;">GARANTIR INGRESSO</a>
-            </div>
-        </section>
+  <section class="hero-content" style="padding-top: 20px; transform: translateY(-30px);">
+    <!-- Logo removida daqui e colocada no hero-wrapper com position absolute -->
+    <h1 class="hero-title">
+      O MAIOR EVENTO EMPRESARIAL<br>
+      DA <span class="blue">HISTÓRIA DO NORTE DE MINAS!</span>
+    </h1>
+    <p class="hero-subtitle">
+      T3 Experience: A Imersão Definitiva para <b>Líderes que<br>buscam Crescimento com Método.</b>
+    </p>
+    <a href="#ingressos" class="btn-blue">GARANTIR INGRESSO</a>
+  </section>
 
-        <!-- Speakers Section -->
-        <section id="palestrantes" class="container" style="text-align: center;">
-            <h2 style="margin-bottom: 60px;">CONFIRA QUEM ESTÁ <span class="text-blue">CONFIRMADO</span></h2>
-            <div class="speakers-grid"
-                style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 30px;">
+  <!-- Removido o elemento absoluto do Montes Claros daqui e colocado dentro do motivacional -->
 
-                <div class="glass-card">
-                    <img src="assets/speaker-f.png" alt="Camila Farani"
-                        style="width: 100%; border-radius: 10px; margin-bottom: 15px;">
-                    <h3>CAMILA FARANI</h3>
-                </div>
-                <div class="glass-card">
-                    <img src="assets/speaker-m.png" alt="João Kepler"
-                        style="width: 100%; border-radius: 10px; margin-bottom: 15px;">
-                    <h3>JOÃO KEPLER</h3>
-                </div>
-                <div class="glass-card">
-                    <img src="assets/speaker-m.png" alt="Hans Donner"
-                        style="width: 100%; border-radius: 10px; margin-bottom: 15px;">
-                    <h3>HANS DONNER</h3>
-                </div>
-                <div class="glass-card">
-                    <img src="assets/speaker-m.png" alt="Cafu"
-                        style="width: 100%; border-radius: 10px; margin-bottom: 15px;">
-                    <h3>CAFU</h3>
-                </div>
-                <div class="glass-card">
-                    <img src="assets/speaker-m.png" alt="Diego Suzano"
-                        style="width: 100%; border-radius: 10px; margin-bottom: 15px;">
-                    <h3>DIEGO SUZANO</h3>
-                </div>
-                <div class="glass-card">
-                    <img src="assets/speaker-f.png" alt="Priscila Gusmão"
-                        style="width: 100%; border-radius: 10px; margin-bottom: 15px;">
-                    <h3>PRISCILA GUSMÃO</h3>
-                </div>
-                <div class="glass-card">
-                    <img src="assets/speaker-m.png" alt="Robison Luiz"
-                        style="width: 100%; border-radius: 10px; margin-bottom: 15px;">
-                    <h3>ROBISON LUIZ</h3>
-                </div>
-                <div class="glass-card">
-                    <img src="assets/speaker-m.png" alt="Fred Rocha"
-                        style="width: 100%; border-radius: 10px; margin-bottom: 15px;">
-                    <h3>FRED ROCHA</h3>
-                </div>
-                <div class="glass-card">
-                    <img src="assets/speaker-m.png" alt="André Colares"
-                        style="width: 100%; border-radius: 10px; margin-bottom: 15px;">
-                    <h3>ANDRÉ COLARES</h3>
-                </div>
-                <div class="glass-card">
-                    <img src="assets/speaker-m.png" alt="Victor Oliveira"
-                        style="width: 100%; border-radius: 10px; margin-bottom: 15px;">
-                    <h3>VICTOR OLIVEIRA</h3>
-                </div>
-                <div class="glass-card">
-                    <img src="assets/speaker-m.png" alt="Bernardo Berrys"
-                        style="width: 100%; border-radius: 10px; margin-bottom: 15px;">
-                    <h3>BERNARDO BERRYS</h3>
-                </div>
-                <div class="glass-card">
-                    <img src="assets/speaker-f.png" alt="Mariah Morais"
-                        style="width: 100%; border-radius: 10px; margin-bottom: 15px;">
-                    <h3>MARIAH MORAIS</h3>
-                </div>
-            </div>
-            <a href="#ingressos" class="btn btn-blue" style="margin-top: 60px;">GARANTIR INGRESSO</a>
-        </section>
+  <section class="motivacional-section">
+    <div class="motivacional-content">
+      <h2>
+        CHEGA DE PALESTRAS MOTIVACIONAIS<br>
+        <span class="blue">QUE NÃO MUDAM SEUS NÚMEROS</span>
+      </h2>
 
-        <!-- Pricing Section -->
-        <section id="ingressos" style="background-color: rgba(0,0,0,0.5);">
-            <div class="container" style="text-align: center;">
-                <h2 style="margin-bottom: 60px;">ESCOLHA O SEU <span class="text-blue">INGRESSO</span></h2>
-                <div class="pricing-grid" style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;">
+      <p class="desc">
+        Todo empresário sabe que crescer na base da <b>tentativa e erro custa caro.</b>
+      </p>
 
-                    <!-- Diamond Pass -->
-                    <div class="glass-card"
-                        style="max-width: 400px; position: relative; border: 2px solid var(--accent-green);">
-                        <div
-                            style="position: absolute; top: -15px; right: 20px; background-color: var(--accent-green); color: #000; padding: 5px 15px; border-radius: 20px; font-weight: 900; font-size: 0.7rem;">
-                            DESTAQUE</div>
-                        <h3 class="text-blue" style="font-size: 2.5rem; margin-bottom: 10px;">DIAMOND</h3>
-                        <p style="color: var(--text-gray); margin-bottom: 20px;">Ingresso Premium</p>
-                        <div class="price" style="margin-bottom: 30px;">
-                            <p style="font-size: 0.9rem;">Até 6 parcelas de:</p>
-                            <h4 style="font-size: 3rem; color: var(--primary-blue);">R$ 217,00</h4>
-                            <p style="font-size: 0.9rem; color: var(--text-gray);">Ou à vista por R$1.236,90</p>
-                        </div>
-                        <ul style="list-style: none; text-align: left; margin-bottom: 40px; font-size: 0.9rem;">
-                            <li style="margin-bottom: 10px;">✅ Localização privilegiada (Front Stage)</li>
-                            <li style="margin-bottom: 10px;">✅ Networking VIP</li>
-                        </ul>
-                        <a href="#" class="btn btn-green" style="width: 100%;">GARANTIR INGRESSO</a>
-                    </div>
+      <p class="desc">
+        No T3 Experience, o foco não é apenas inspirar, mas <b>entregar o mapa<br>
+          prático para conectar marcas, multiplicar capital e dominar o mercado.</b>
+      </p>
 
-                    <!-- Black Pass -->
-                    <div class="glass-card" style="max-width: 400px; background-color: rgba(255,255,255,0.02);">
-                        <h3 style="font-size: 2.5rem; margin-bottom: 10px;">BLACK</h3>
-                        <p style="color: var(--text-gray); margin-bottom: 20px;">Ingresso Executivo</p>
-                        <div class="price" style="margin-bottom: 30px;">
-                            <p style="font-size: 0.9rem;">Até 6 parcelas de:</p>
-                            <h4 style="font-size: 3rem;">R$ 87,00</h4>
-                            <p style="font-size: 0.9rem; color: var(--text-gray);">Ou à vista por R$ 495,90</p>
-                        </div>
-                        <ul style="list-style: none; text-align: left; margin-bottom: 40px; font-size: 0.9rem;">
-                            <li style="margin-bottom: 10px;">✅ Acesso completo aos dois dias</li>
-                            <li style="margin-bottom: 10px;">✅ Conteúdo de elite</li>
-                        </ul>
-                        <a href="#" class="btn btn-green" style="width: 100%;">GARANTIR INGRESSO</a>
-                    </div>
+      <div class="text-montes-claros" style="margin-bottom: 40px;">
+        Nos dias <b>15 e 16 de abril</b>, Montes Claros será o palco<br>
+        da inovação empresarial do país.
+      </div>
 
-                </div>
-            </div>
-        </section>
+      <div class="btn-wrapper" style="margin-top: 20px;">
+        <a href="#ingressos" class="btn-blue">GARANTIR INGRESSO</a>
+      </div>
+    </div>
+  </section>
 
-        <!-- Final CTA -->
-        <section class="container" style="text-align: center;">
-            <div class="glass-card"
-                style="padding: 60px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; text-align: left;">
-                <div style="flex: 1; min-width: 300px;">
-                    <h2 style="font-size: 2.5rem; margin-bottom: 20px;">
-                        O <span class="text-blue">PRÓXIMO NÍVEL</span> DA SUA EMPRESA <span class="text-blue">COMEÇA
-                            AQUI.</span>
-                    </h2>
-                    <p style="color: var(--text-gray);">
-                        Não seja o empresário que fica sabendo do evento pelo Instagram dos outros. Viva a experiência.
-                    </p>
-                </div>
-                <div style="flex: 0; min-width: 300px; text-align: right;">
-                    <a href="#ingressos" class="btn btn-blue">GARANTIR INGRESSO</a>
-                </div>
-            </div>
-        </section>
-    </main>
+  <section class="speakers-section">
+    <img src="./public/BR-MG.png" class="speakers-bg-map" alt="Map" onerror="this.style.display='none'">
 
-    <footer style="padding: 40px 0; border-top: 1px solid var(--glass-border); text-align: center;">
-        <div class="container">
-            <div style="font-family: var(--font-heading); font-weight: 900; font-size: 1.2rem; margin-bottom: 20px; opacity: 0.5;">
-                T3 <span style="color: var(--primary-blue);">EXPERIENCE</span>
-            </div>
-            <p style="font-size: 0.8rem; color: var(--text-gray);">
-                &copy; 2026 T3 Experience - Todos os direitos reservados.
-            </p>
+    <h2 class="speakers-title">CONFIRA QUEM ESTÁ <span class="blue">CONFIRMADO</span></h2>
+
+    <div class="speakers-grid-row1">
+      <div class="speaker-card">
+        <img src="./public/Camila Farah.png" class="speaker-img"
+          onerror="this.src='https://via.placeholder.com/200x250/0A2154/ffffff'">
+        <div class="speaker-info-wrapper">
+          <div class="speaker-name">CAMILA</div>
+          <div class="speaker-role">FARANI</div>
         </div>
-    </footer>
+      </div>
+      <div class="speaker-card">
+        <img src="./public/Joao Kepler.png" class="speaker-img"
+          onerror="this.src='https://via.placeholder.com/200x250/0A2154/ffffff'">
+        <div class="speaker-info-wrapper">
+          <div class="speaker-name">JOÃO</div>
+          <div class="speaker-role">KEPLER</div>
+        </div>
+      </div>
+      <div class="speaker-card">
+        <img src="./public/Hans Donner.png" class="speaker-img"
+          onerror="this.src='https://via.placeholder.com/200x250/0A2154/ffffff'">
+        <div class="speaker-info-wrapper">
+          <div class="speaker-name">HANS</div>
+          <div class="speaker-role">DONNER</div>
+        </div>
+      </div>
+      <div class="speaker-card">
+        <img src="./public/cafu.png" class="speaker-img"
+          onerror="this.src='https://via.placeholder.com/200x250/0A2154/ffffff'">
+        <div class="speaker-info-wrapper">
+          <div class="speaker-name">CAFU</div>
+          <div class="speaker-role">&nbsp;</div>
+        </div>
+      </div>
+      <div class="speaker-card">
+        <img src="./public/Diego Lozano.png" class="speaker-img"
+          onerror="this.src='https://via.placeholder.com/200x250/0A2154/ffffff'">
+        <div class="speaker-info-wrapper">
+          <div class="speaker-name">DIEGO</div>
+          <div class="speaker-role">SUZANO</div>
+        </div>
+      </div>
+    </div>
 
-    <script src="main.js"></script>
+    <div class="speakers-grid-row2">
+      <div class="speaker-card wide">
+        <img src="./public/Prisicila e robson.png" class="speaker-img"
+          onerror="this.src='https://via.placeholder.com/200x250/0A2154/ffffff'">
+        <div class="speaker-info-wrapper speaker-duo">
+          <div>
+            <div class="speaker-name">PRISCILA</div>
+            <div class="speaker-role">GUSMÃO</div>
+          </div>
+          <div>
+            <div class="speaker-name">ROBISON</div>
+            <div class="speaker-role">LUZ</div>
+          </div>
+        </div>
+      </div>
+      <div class="speaker-card">
+        <img src="./public/Fred rocha.png" class="speaker-img"
+          onerror="this.src='https://via.placeholder.com/200x250/0A2154/ffffff'">
+        <div class="speaker-info-wrapper">
+          <div class="speaker-name">FRED</div>
+          <div class="speaker-role">ROCHA</div>
+        </div>
+      </div>
+      <div class="speaker-card extra-wide">
+        <img src="./public/Andre bernardo e victor.png" class="speaker-img"
+          onerror="this.src='https://via.placeholder.com/200x250/0A2154/ffffff'">
+        <div class="speaker-info-wrapper speaker-trio">
+          <div>
+            <div class="speaker-name">ANDRÉ</div>
+            <div class="speaker-role">COLARES</div>
+          </div>
+          <div>
+            <div class="speaker-name">VICTOR</div>
+            <div class="speaker-role">OLIVEIRA</div>
+          </div>
+          <div>
+            <div class="speaker-name">BERNARDO</div>
+            <div class="speaker-role">BERRYS</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="speaker-card">
+        <img src="./public/Mariah morais.png" class="speaker-img"
+          onerror="this.src='https://via.placeholder.com/200x250/0A2154/ffffff'">
+        <div class="speaker-info-wrapper">
+          <div class="speaker-name">MARIAH</div>
+          <div class="speaker-role">MORAIS</div>
+        </div>
+      </div>
+    </div>
+
+    <a href="#ingressos" class="btn-blue">GARANTIR INGRESSO</a>
+  </section>
+
+  <section class="tickets-section" id="ingressos">
+    <!-- THE MOCKUPS IMAGE -->
+    <img src="./public/5ce342a6821914f69eb403a6f1f940f768e75b6b.png" alt="Ingressos Render" class="tickets-mockups"
+      onerror="this.style.display='none'">
+
+    <div class="tickets-bg-layer"></div>
+    <div class="tickets-left">
+      <h2>ESCOLHA O SEU <span class="blue">INGRESSO</span>:</h2>
+
+      <div class="tickets-cards-wrapper">
+        <!-- DIAMOND -->
+        <div class="ticket-card diamond">
+          <h3>DIAMOND</h3>
+          <div class="ticket-subtitle">Ingresso Premium</div>
+          <div class="installment">até 6 parcelas de:</div>
+          <div class="ticket-price">
+            <span>R$</span> 217,00
+          </div>
+          <div class="price-cash">Ou à vista por R$ 1.236,90</div>
+
+          <div class="includes-title">Seu ingresso inclui:</div>
+          <ul class="ticket-list">
+            <li><span class="check-icon">✓</span> <span>Localização privilegiada (Front Stage).<br>e Networking
+                VIP</span></li>
+          </ul>
+
+          <a href="https://checkoutsegurot3.vercel.app/evento.html?id=7a513ef5-0093-4c4c-9e8b-ef53fc0a7d20"
+            class="btn-ticket" style="display: block; text-decoration: none;">GARANTIR INGRESSO</a>
+        </div>
+
+        <!-- BLACK -->
+        <div class="ticket-card black">
+          <h3>BLACK</h3>
+          <div class="ticket-subtitle">Ingresso Premium</div>
+          <div class="installment">até 6 parcelas de:</div>
+          <div class="ticket-price">
+            <span>R$</span> 87,00
+          </div>
+          <div class="price-cash">Ou à vista por R$ 495,90</div>
+
+          <div class="includes-title">Seu ingresso inclui:</div>
+          <ul class="ticket-list">
+            <li><span class="check-icon">✓</span> <span>Acesso completo aos dois dias de imersão e conteúdo de
+                elite.</span></li>
+          </ul>
+
+          <a href="https://checkoutsegurot3.vercel.app/evento.html?id=d64d0a19-6d9b-4b46-99aa-5d82cf08daa9"
+            class="btn-ticket" style="display: block; text-decoration: none;">GARANTIR INGRESSO</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div>
+        <h2>O <span class="blue">PRÓXIMO NÍVEL</span> DA SUA<br>EMPRESA <span class="blue">COMEÇA AQUI</span>.</h2>
+      </div>
+      <div class="footer-divider"></div>
+      <div class="footer-right">
+        <p>Não seja o empresário que fica<br>sabendo do evento pelo Instagram<br>dos outros. Viva a experiência.</p>
+        <a href="#ingressos" class="btn-blue">GARANTIR INGRESSO</a>
+      </div>
+    </div>
+  </footer>
+
 </body>
 
 </html>
