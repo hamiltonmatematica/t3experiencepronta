@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=1440">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>T3 Experience</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,10 +31,12 @@
     body {
       background-color: var(--bg-deep);
       font-family: 'Barlow', sans-serif;
-      width: 1440px;
+      width: 100%;
+      max-width: 1440px;
       margin: 0 auto;
       color: var(--white);
       position: relative;
+      overflow-x: hidden;
     }
 
     /* BOTOES GERAIS */
@@ -66,6 +68,7 @@
 
     .btn-white {
       width: 360px;
+      max-width: 100%;
       height: 50px;
       background: var(--white);
       color: var(--bg-deep);
@@ -89,7 +92,7 @@
     /* HEADER */
     .header {
       position: relative;
-      width: 1440px;
+      width: 100%;
       height: 121px;
       background: url('./public/Rectangle 22521.png') repeat-x center top;
       background-size: cover;
@@ -139,7 +142,7 @@
     /* HERO IMAGE */
     .hero-wrapper {
       position: relative;
-      width: 1440px;
+      width: 100%;
       height: 725px;
       /* Tamanho da imagem na dobra superior */
       background: url('./public/image 40.png') no-repeat top center;
@@ -205,12 +208,12 @@
 
     /* MOTIVACIONAL */
     .motivacional-section {
-      width: 1440px;
+      width: 100%;
       position: relative;
       background: url('./public/people-taking-part-high-protocol-event (2) 1.jpg') no-repeat center bottom;
       background-size: cover;
       text-align: center;
-      padding: 100px 0;
+      padding: 100px 20px;
     }
 
     .motivacional-section::before {
@@ -784,6 +787,358 @@
       color: rgba(255, 255, 255, 0.7);
       margin-bottom: 25px;
       /* Um tiquinho mais espaçoso */
+    }
+
+    /* ===== RESPONSIVO ===== */
+
+    /* TABLET */
+    @media (max-width: 1024px) {
+      .header {
+        padding: 0 30px;
+        height: auto;
+        min-height: 80px;
+        flex-wrap: wrap;
+        gap: 10px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+      }
+
+      .texto-header {
+        font-size: 14px;
+        text-align: right;
+      }
+
+      .btn-white {
+        width: auto;
+        padding: 10px 25px;
+        font-size: 14px;
+        height: auto;
+      }
+
+      .hero-wrapper {
+        height: 450px;
+      }
+
+      .hero-logo-small {
+        top: 320px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 140px;
+        height: auto;
+      }
+
+      .hero-title {
+        font-size: 42px;
+      }
+
+      .hero-subtitle {
+        font-size: 16px;
+        padding: 0 20px;
+      }
+
+      .motivacional-content h2 {
+        font-size: 36px;
+        width: auto;
+        height: auto;
+        transform: translateY(-40px);
+      }
+
+      .motivacional-content .desc {
+        font-size: 18px;
+        padding: 0 20px;
+      }
+
+      .text-montes-claros {
+        font-size: 18px;
+      }
+
+      .speakers-title {
+        font-size: 42px;
+        padding: 0 20px;
+      }
+
+      .speakers-grid-row1,
+      .speakers-grid-row2 {
+        flex-wrap: wrap;
+        gap: 12px;
+        padding: 0 20px;
+      }
+
+      .speaker-card {
+        width: 160px;
+        height: 280px;
+      }
+
+      .speaker-card.wide {
+        width: 220px;
+      }
+
+      .speaker-card.extra-wide {
+        width: 280px;
+      }
+
+      .speaker-info-wrapper {
+        top: 180px;
+      }
+
+      .speaker-name {
+        font-size: 32px;
+      }
+
+      .speaker-role {
+        font-size: 32px;
+      }
+
+      .tickets-section {
+        padding: 60px 20px 40px 20px;
+      }
+
+      .tickets-mockups {
+        display: none;
+      }
+
+      .tickets-cards-wrapper {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .ticket-card {
+        width: 280px;
+      }
+
+      .tickets-left h2 {
+        font-size: 36px;
+      }
+
+      .footer {
+        padding: 60px 30px;
+      }
+
+      .footer-content {
+        gap: 30px;
+      }
+
+      .footer-content h2 {
+        font-size: 36px;
+      }
+    }
+
+    /* MOBILE */
+    @media (max-width: 640px) {
+      .header {
+        padding: 12px 15px;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .logo-header {
+        width: 110px;
+      }
+
+      .header-right {
+        align-items: center;
+        gap: 8px;
+      }
+
+      .texto-header {
+        font-size: 11px;
+        text-align: center;
+        margin-top: 0;
+      }
+
+      .btn-white {
+        width: 100%;
+        max-width: 260px;
+        font-size: 13px;
+        padding: 10px 20px;
+      }
+
+      .hero-wrapper {
+        height: 300px;
+      }
+
+      .hero-logo-small {
+        top: 200px;
+        width: 110px;
+      }
+
+      .hero-content {
+        padding: 0 15px;
+      }
+
+      .hero-title {
+        font-size: 28px;
+      }
+
+      .hero-subtitle {
+        font-size: 14px;
+        padding: 0 10px;
+      }
+
+      .hero-subtitle br {
+        display: none;
+      }
+
+      .btn-blue {
+        font-size: 14px;
+        padding: 14px 30px;
+        width: 100%;
+        max-width: 300px;
+      }
+
+      .motivacional-section {
+        padding: 60px 15px;
+      }
+
+      .motivacional-content h2 {
+        font-size: 26px;
+        width: auto;
+        height: auto;
+        transform: translateY(-30px);
+      }
+
+      .motivacional-content .desc {
+        font-size: 15px;
+        padding: 0 10px;
+      }
+
+      .motivacional-content .desc br {
+        display: none;
+      }
+
+      .text-montes-claros {
+        font-size: 15px;
+      }
+
+      .text-montes-claros br {
+        display: none;
+      }
+
+      .btn-wrapper {
+        margin-top: 40px;
+        display: flex;
+        justify-content: center;
+      }
+
+      .speakers-section {
+        padding: 60px 0;
+      }
+
+      .speakers-title {
+        font-size: 30px;
+        margin-bottom: 30px;
+        padding: 0 15px;
+      }
+
+      .speakers-grid-row1,
+      .speakers-grid-row2 {
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 0 15px;
+        justify-content: center;
+      }
+
+      .speaker-card {
+        width: 140px;
+        height: 240px;
+      }
+
+      .speaker-card.wide {
+        width: 200px;
+        height: 240px;
+      }
+
+      .speaker-card.extra-wide {
+        width: 100%;
+        max-width: 300px;
+        height: 260px;
+      }
+
+      .speaker-info-wrapper {
+        top: 150px;
+      }
+
+      .speaker-name {
+        font-size: 26px;
+      }
+
+      .speaker-role {
+        font-size: 26px;
+      }
+
+      .speaker-duo .speaker-name,
+      .speaker-duo .speaker-role {
+        font-size: 22px;
+      }
+
+      .speaker-trio .speaker-name,
+      .speaker-trio .speaker-role {
+        font-size: 18px;
+      }
+
+      .tickets-section {
+        padding: 40px 15px 30px 15px;
+        min-height: auto;
+      }
+
+      .tickets-mockups {
+        display: none;
+      }
+
+      .tickets-left h2 {
+        font-size: 28px;
+      }
+
+      .tickets-cards-wrapper {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .ticket-card {
+        width: 100%;
+        max-width: 320px;
+      }
+
+      .footer {
+        padding: 40px 15px;
+      }
+
+      .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 25px;
+      }
+
+      .footer-content h2 {
+        font-size: 28px;
+      }
+
+      .footer-content h2 br {
+        display: none;
+      }
+
+      .footer-divider {
+        width: 60px;
+        height: 1px;
+      }
+
+      .footer-right {
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .footer-right p {
+        font-size: 14px;
+        text-align: center;
+      }
+
+      .footer-right p br {
+        display: none;
+      }
     }
   </style>
 </head>
